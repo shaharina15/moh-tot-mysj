@@ -1,8 +1,12 @@
 package org.totmysj.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 //table structure
+@Setter
+@Getter
 @Entity
 @Table(name="PATIENT")
 
@@ -15,11 +19,15 @@ public class PatientEntity extends AbstactJpaAuditable<Long>
     @Column(name = "PATIENT_ID")
     private String patientId;
 
-    @Column(name="AGE")
+    @Column(name = "AGE")
     private Integer age;
 
-    @Column(name="NAME")
+    @Column(name = "NAME")
     private String name;
+
+    @Column(name = "CONTACT_NO")
+    private String contactNo;
+}
 
 //    public void setId(Long id)
 //    {
@@ -30,28 +38,3 @@ public class PatientEntity extends AbstactJpaAuditable<Long>
 //    {
 //        return id;
 //    }
-
-    public String getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(String patientId) {
-        this.patientId = patientId;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-}

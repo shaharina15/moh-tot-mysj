@@ -1,4 +1,4 @@
-package org.totmysj;
+package org.totmysj.controller;
 
 import org.totmysj.domain.PatientEntity;
 import org.springframework.web.bind.annotation.*;
