@@ -1,10 +1,8 @@
 package org.totmysj.controller;
 
-import org.totmysj.domain.PatientEntity;
 import org.springframework.web.bind.annotation.*;
-import org.totmysj.domain.PatientRepo;
-import org.totmysj.dto.PatientDto;
 import org.totmysj.service.PatientService;
+import org.totmysj.dto.PatientDto;
 
 @RestController
 class PatientController
@@ -12,9 +10,8 @@ class PatientController
     //private final PatientRepo patientRepo;
     private final PatientService patientService;
 
-    PatientController(PatientService patientService) //PatientRepo patientRepo,
+    PatientController(PatientService patientService)
     {
-        //this.patientRepo = patientRepo;
         this.patientService = patientService;
     }
 

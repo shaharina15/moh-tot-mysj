@@ -4,11 +4,13 @@ package org.totmysj.dto;
 @lombok.Data
 @lombok.AllArgsConstructor
 
-public class PatientDto {
+public class PatientDto
+{
     private String patientId;
     private String name;
     private int age;
     private String contactNo;
+    private String email;
 }
 
 //getter & setter

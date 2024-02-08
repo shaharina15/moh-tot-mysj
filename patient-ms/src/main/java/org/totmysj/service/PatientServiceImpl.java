@@ -23,14 +23,14 @@ class PatientServiceImpl implements PatientService
         entity.setAge(patient.getAge());
         entity.setName(patient.getName());
         entity.setContactNo(patient.getContactNo());
+        entity.setEmail(patient.getEmail());
         return patientRepo.save(entity).getId();
         //map.put(patientDto.getPatientNo(), patientDto);
     }
     public PatientDto getPatient(@PathVariable("id") Long id)
     {
         var entity = patientRepo.findById(id).orElseThrow();
-
-        return new PatientDto(entity.getPatientId(),entity.getName(),entity.getAge(),entity.getContactNo());
+        return new PatientDto(entity.getPatientId(),entity.getName(),entity.getAge(),entity.getContactNo(), entity.getEmail());
     }
     //  patient.setPatientId(entity.getPatientId());
     //  patient.setName(entity.getName());
@@ -54,13 +54,14 @@ class PatientServiceImpl implements PatientService
         entity.setName(patient.getName());
         entity.setPatientId(patient.getPatientId());
         entity.setContactNo(patient.getContactNo());
+        entity.setEmail(patient.getEmail());
         patientRepo.save(entity);
     }
     @Override
     public PatientDto searchPatientByPatientId(String patientId)
     {
         var patient = patientRepo.findByPatientId(patientId).orElseThrow();
-        return new PatientDto(patient.getPatientId(),patient.getName(),patient.getAge(),patient.getContactNo());
+        return new PatientDto(patient.getPatientId(),patient.getName(),patient.getAge(),patient.getContactNo(),patient.getEmail());
         //return null;
     }
 }
