@@ -3,6 +3,8 @@ package org.totmysj.controller;
 import org.springframework.web.bind.annotation.*;
 import org.totmysj.service.PatientService;
 import org.totmysj.dto.PatientDto;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 
 @RestController
 class PatientController

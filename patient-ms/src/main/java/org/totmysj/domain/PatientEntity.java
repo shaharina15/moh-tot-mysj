@@ -1,13 +1,13 @@
 package org.totmysj.domain;
 
 import jakarta.persistence.*;
+import org.totmysj.domain.AbstactJpaAuditable;
 
 //table structure
+@lombok.EqualsAndHashCode(callSuper = true)
 @lombok.Data
-@lombok.AllArgsConstructor
-@lombok.NoArgsConstructor
 @Entity
-@Table(name="PATIENT")
+@Table(name="PATIENT", indexes = @Index(unique = true, columnList = "PATIENT_ID"))
 
 public class PatientEntity extends AbstactJpaAuditable<Long>
 {

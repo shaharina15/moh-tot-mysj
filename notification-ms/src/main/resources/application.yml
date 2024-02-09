@@ -1,0 +1,21 @@
+spring:
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: 2b4ec127f52870
+    password: a2183162893a87
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+  kafka:
+    bootstrap-servers: relieved-labrador-6815-us1-kafka.upstash.io:9092
+    properties:
+      security.protocol: SASL_SSL
+      sasl:
+        mechanism: SCRAM-SHA-256
+        jaas.config: org.apache.kafka.common.security.scram.ScramLoginModule required username="cmVsaWV2ZWQtbGFicmFkb3ItNjgxNSTLtHanS9yVao3SiPmsLZ1F0Q1EUiR5oTw" password="MDM5ZWRiYmItODg1OS00MzljLTkyMDYtM2FjY2ZjZDI1NjRl";
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties.spring.json.trusted.packages: "*"
